@@ -61,7 +61,7 @@ to keep a variable in your function for other purposes.
 Fortunatelly rust has some ways of disabling this feature, so you can experiment without feeling bad about
 dangaling references.
 
-> I recommend not overring the compiler if you can avoid it
+> I recommend not overriding the compiler if you can avoid it
 
 ### Prefix your variable with an underscore
 
