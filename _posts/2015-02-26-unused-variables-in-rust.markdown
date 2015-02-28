@@ -23,7 +23,10 @@ Ever had code that looks like this?
   {% endhighlight %}
 </figure>
 
-Here we've initialized two variables.
+> Well, not exactly like this, perhaps.
+
+You know. You're writing a great new function and you initialize a variable that you never use. This time,
+we have two variables which, might have been importatnt at the time.
 
 `great_variable` & `unused_variable`
 
@@ -36,14 +39,16 @@ unused.rs:2     let unused_variable = 1u32;
                     ^~~~~~~~~~~~~~~~~~
 {% endhighlight %}
 
-The rust compiler comes with built in checking of unused vairables and dead code. When the compiler sees that there's a
-variable initialized, yet is never used, it warns us of this. Your code will still compile and run
-but I recommend you clean out those bits of dead code.
+That extra `unused_variable` isn't relevant anymore and the rust compiler lets us know that we have some extra
+lines of unused vairables and dead code. It still compiles your code and the program will run, but you should
+clean out those bits of dead code.
 
 ## Why care about dead code?
 
-Since [dead code](http://www.aivosto.com/vbtips/deadcode.html) is never executed, why worry about it? When working on larger software projects,
-extra baggage can cause extra headache when trying to understand what a function or a class does.
+Since [dead code](http://www.aivosto.com/vbtips/deadcode.html) is never executed, why worry about it?
+
+When working on larger software projects, extra baggage can cause extra headache when trying to
+understand what a function or a class does.
 
 > Avoid this at all costs
 
@@ -53,7 +58,7 @@ be difficult to figure out what exactly your program is doing.
 
 ## What if that line is really needed?
 
-Sometimes we just need that extra code, whether it's to debug an issue, keep some code around during
+Sometimes we just need that extra code, whether it's to debug a logic issue, to keep some code around during
 a refactor or when trying to wrap your head around something new. It can be really frustrating to have this error
 appear when you're trying to compile your program. Additionally there are legitimate times when you might need
 to keep a variable in your function for other purposes.
